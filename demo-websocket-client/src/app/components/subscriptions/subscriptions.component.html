@@ -3,6 +3,8 @@
   <h2>Received Subscriptions</h2>
   <ol>
     <!-- we will use Angular binding to populate list of messages -->
-    <li class="message" *ngFor="let message of receivedMessages">{{message}}</li>
+    <li class="message" *ngFor="let message of receivedMessages">
+      Client ID: {{message.clientId}}, User: {{message.user}}, Topic: {{message.topic}}, Endpoint: {{message.endpoint}}
+    </li>
   </ol>
 </div>

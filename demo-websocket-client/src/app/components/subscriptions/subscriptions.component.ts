@@ -11,13 +11,13 @@ import { SubscriptionRequest } from 'src/app/models/SubscriptionRequest';
 })
 export class SubscriptionsComponent implements OnInit {
 
-  public receivedMessages: string[] = [];
+  public receivedMessages: Subscription[] = [];
 
   constructor(private rxStompService: RxStompService) {}
 
   ngOnInit() {
     this.rxStompService.watch('/topic/subscriptions').subscribe((message: Message) => {
-      const subscriber = JSON.parse(message.body).user
+      const subscriber = JSON.parse(message.body) as Subscription;
       this.receivedMessages.push(subscriber);
     });
   }
