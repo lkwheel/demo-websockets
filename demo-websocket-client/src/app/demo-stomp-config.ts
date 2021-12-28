@@ -6,9 +6,9 @@ export const demoRxStompConfig: InjectableRxStompConfig = {
   webSocketFactory: function() {
     return new SockJS('http://localhost:8085/demo');
   },
-  heartbeatIncoming: 0,
+  heartbeatIncoming: 20000,
   heartbeatOutgoing: 20000,
-  reconnectDelay: 200,
+  reconnectDelay: 300,
   debug: (msg: string): void => {
     console.log(new Date(), msg);
   }

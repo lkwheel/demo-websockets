@@ -8,3 +8,6 @@
     </li>
   </ol>
 </div>
+<div class="state" *ngIf="stompConnState$ |async as stompConnState">
+  <span>Live Feed Connection State: {{ stompConnState }}</span>
+</div>
