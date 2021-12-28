@@ -1,6 +1,6 @@
 package com.example.demowebsocketserver.controllers;
 
-import com.example.demowebsocketserver.model.Subscription;
+import com.example.demowebsocketserver.model.TopicSubscription;
 import com.example.demowebsocketserver.model.SubscriptionRequest;
 import java.util.UUID;
 import org.springframework.messaging.handler.annotation.MessageMapping;
@@ -21,9 +21,9 @@ public class SubscriptionController {
    */
   @MessageMapping("/subscribe")
   @SendTo("/topic/subscriptions")
-  public Subscription subscribe(SubscriptionRequest request) throws Exception {
+  public TopicSubscription subscribe(SubscriptionRequest request) throws Exception {
     Thread.sleep(1000);
-    return new Subscription(UUID.randomUUID().toString(), request.getUser(), request.getTopic(),
+    return new TopicSubscription(UUID.randomUUID().toString(), request.getUser(), request.getTopic(),
       "/subscribe");
   }
 }

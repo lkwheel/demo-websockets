@@ -1,4 +1,4 @@
-export interface Subscription {
+export interface TopicSubscription {
   clientId: string,
   user: string,
   topic: string,
