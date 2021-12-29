@@ -1,3 +1,6 @@
+import { prodRxStompConfig } from 'src/app/demo-stomp-config';
+
 export const environment = {
-  production: true
+  production: true,
+  stompConfig: prodRxStompConfig,
 };
